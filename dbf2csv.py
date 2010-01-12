@@ -35,7 +35,7 @@ pages = record_count / page_size
 for page in xrange(pages):
     
     # TODO: replace the magic number with a calculated one 
-    file_name = (output + str(page).zfill(3) + CSV)
+    file_name = (output + "." + str(page).zfill(3) + CSV)
     file = open(file_name, 'w')
     parser.header(db, file)
     parser.records(db, file, page_size * page, page_size)
